@@ -2,7 +2,7 @@
 
 Thessaloniki's JavaScript community official website.
 
-## Developmnet
+## Development
 
 First, run the development server:
 
