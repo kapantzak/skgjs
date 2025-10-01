@@ -15,28 +15,50 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Join Us',
-        href: '#next-event',
-        icon: 'tabler:calendar-event',
-      },
-      { text: 'Learn More', href: '#about' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', alt: 'JavaScript Code' }}
-  >
-    <Fragment slot="title">
-      <span class="text-5xl md:text-7xl font-bold dark:text-white">SKG-JS</span>
-    </Fragment>
+  <section class="relative min-h-screen flex items-center justify-center -mt-[76px]">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        alt="JavaScript Code"
+        class="w-full h-full object-cover"
+      />
+      <!-- Dark overlay for better text readability -->
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
 
-    <Fragment slot="subtitle">
-      <span class="text-xl md:text-2xl dark:text-gray-300">
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
+      <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6">
+        SKG-JS
+      </h1>
+      <p class="text-2xl md:text-3xl lg:text-4xl text-gray-200 mb-12">
         Thessaloniki JavaScript Community - Where developers connect, learn, and grow together
-      </span>
-    </Fragment>
-  </Hero>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="#next-event"
+          class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-lg transition-colors inline-flex items-center justify-center gap-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+            <path d="M16 3l0 4"></path>
+            <path d="M8 3l0 4"></path>
+            <path d="M4 11l16 0"></path>
+            <path d="M8 15h2v2h-2z"></path>
+          </svg>
+          Join Us
+        </a>
+        <a
+          href="#about"
+          class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 rounded-lg font-semibold text-lg transition-colors"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Next Event Widget ******************* -->
 
