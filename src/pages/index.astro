@@ -5,11 +5,14 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { LINKS } from 'astrowind:config';
 
 const metadata = {
   title: 'SKG-JS — Thessaloniki JavaScript Community',
   ignoreTitleTemplate: true,
 };
+
+const joinUsLink = LINKS?.joinUs || '#';
 ---
 
 <Layout metadata={metadata}>
@@ -35,7 +38,7 @@ const metadata = {
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="https://www.meetup.com/skg-js/events/311173640/"
+          href={joinUsLink}
           target="_blank"
           class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-lg transition-colors inline-flex items-center justify-center gap-2"
         >
@@ -161,7 +164,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Join Our Community',
-        href: 'https://www.meetup.com/skg-js/events/311173640/',
+        href: joinUsLink,
         target: '_blank',
         icon: 'tabler:users',
       },

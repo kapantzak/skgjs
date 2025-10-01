@@ -70,3 +70,7 @@ analytics:
 
 ui:
   theme: 'dark:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+
+# Community links
+links:
+  joinUs: 'https://www.meetup.com/skg-js/events/311173640/'
