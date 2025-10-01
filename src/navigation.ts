@@ -15,7 +15,7 @@ export const headerData = {
       href: getPermalink('/past-events'),
     },
   ],
-  actions: [{ text: 'Join Us', href: 'https://github.com/skgjs', target: '_blank' }],
+  actions: [{ text: 'Join Us', href: 'https://www.meetup.com/skg-js/events/311173640/', target: '_blank' }],
 };
 
 export const footerData = {
