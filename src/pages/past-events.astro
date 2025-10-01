@@ -1,0 +1,125 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Timeline from '~/components/ui/Timeline.astro';
+
+const metadata = {
+  title: 'Past Events - SKG-JS',
+};
+
+const events = [
+  {
+    title: 'Modern JavaScript Frameworks',
+    date: 'February 2025',
+    description: 'An in-depth look at React, Vue, and Svelte - comparing their strengths and use cases.',
+    speaker: 'Maria Papadopoulou',
+    attendees: 45,
+  },
+  {
+    title: 'Node.js Performance Optimization',
+    date: 'January 2025',
+    description: 'Best practices for building high-performance Node.js applications in production.',
+    speaker: 'Dimitris Karagiannis',
+    attendees: 38,
+  },
+  {
+    title: 'TypeScript Deep Dive',
+    date: 'December 2024',
+    description: 'Advanced TypeScript patterns and techniques for large-scale applications.',
+    speaker: 'Elena Georgiou',
+    attendees: 52,
+  },
+  {
+    title: 'Web Components & Custom Elements',
+    date: 'November 2024',
+    description: 'Building reusable UI components with native web APIs.',
+    speaker: 'Nikos Alexandrou',
+    attendees: 31,
+  },
+  {
+    title: 'JavaScript Testing Strategies',
+    date: 'October 2024',
+    description: 'Unit testing, integration testing, and E2E testing with modern tools.',
+    speaker: 'Sofia Nikolaidou',
+    attendees: 42,
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Past Events"
+    image={{
+      src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Events Image',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="dark:text-white">Our Journey Together</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      A look back at the amazing events, talks, and workshops that brought our community together.
+      Thank you to all our speakers and attendees who made these events memorable!
+    </Fragment>
+  </Hero>
+
+  <!-- Timeline Widget ******************* -->
+
+  <Timeline
+    title="Event History"
+    subtitle="Explore our past meetups, workshops, and community gatherings"
+    items={events.map(event => ({
+      title: event.title,
+      description: `
+        <div class="space-y-2">
+          <p class="dark:text-gray-300">${event.description}</p>
+          <div class="text-sm dark:text-gray-400">
+            <p><strong>Speaker:</strong> ${event.speaker}</p>
+            <p><strong>Date:</strong> ${event.date}</p>
+            <p><strong>Attendees:</strong> ${event.attendees} developers</p>
+          </div>
+        </div>
+      `,
+    }))}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Community Growth',
+        description:
+          'Over the past year, we\'ve hosted 12+ events with 500+ total attendees from across Thessaloniki.',
+      },
+      {
+        title: 'Knowledge Shared',
+        description:
+          'Topics ranging from fundamentals to advanced concepts, covering all aspects of modern JavaScript development.',
+      },
+      {
+        title: 'Connections Made',
+        description:
+          'Hundreds of developers have connected, collaborated, and formed lasting relationships through our events.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
+      alt: 'Community stats',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building Together</h3>
+      Every event has been a step forward in building a stronger, more connected JavaScript community in Thessaloniki.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>
